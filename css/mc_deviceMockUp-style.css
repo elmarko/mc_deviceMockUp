@@ -138,6 +138,9 @@
 	.mc_mockup_cnt.two .mc_mockup{
 		margin: 2.6rem 30px;
 	}
+	.mc_mockup_cnt figcaption{
+		left: -15px;
+		}
 }
 @media screen and (min-width:992px){
 	.mc_mockup_cnt{

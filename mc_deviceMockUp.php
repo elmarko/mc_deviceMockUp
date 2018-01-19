@@ -58,7 +58,6 @@ function returnModelsToUse($model = null, $models = null){
 }
 
 function checkForVariancesIntThePassedModelString($modelString){
-	echo $modelString;
 	switch($modelString){
 		case (preg_match('/[iphone]?-?\d-?plus/i', $modelString) ? true : false):
 			return "iphone-6-plus";
@@ -85,8 +84,6 @@ function checkForVariancesIntThePassedModelString($modelString){
 }
 
 function returnNumberOfImagesAsAString($numberOfImages){
-	echo $numberOfImages;
-
 	switch ($numberOfImages) {
     case 1:
         return "one";
@@ -116,7 +113,6 @@ function mc_deviceMockUp_to_frontend_shortcode_func($atts = [], $content = null)
 	$enclosingElementToUse = returnEnclosingElement($caption);
 	$figCaptionToUse = returnFigCaption($caption);
 	$modelsToUse = returnModelsToUse($model, $models);
-	var_dump($modelsToUse);
 	ob_start();
 		preg_match_all('/<img([^>]+)?>/', $content, $matches);
 		$sortedArray = [];

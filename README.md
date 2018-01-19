@@ -39,25 +39,21 @@ To add further options, attributes can be added:
 
 ```
 [mc_deviceMockUp caption="my caption goes here "]
-
 ```
 Adds a caption
 
 ```
 [mc_deviceMockUp styles="width:50%"]
-
 ```
 Adds styles to the container
 
 ```
 [mc_deviceMockUp model="iphone-6"]
-
 ```
 Sets the device mock up to use (model affects all images in the container)
 
 ```
 [mc_deviceMockUp models="iphone-6,iphone-6plus,apple-watch"]
-
 ```
 Sets the device mock up to use on a per image basis (models affects a single image for all specified in the container)
 

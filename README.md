@@ -1,5 +1,8 @@
 # mc_deviceMockUp
-Provides a responsive device mock up wrapper around images to simulate the appearance of a screenshot on device
+A Wordpress plugin which provides a responsive device mock up wrapper around images to simulate the appearance of a screenshot on device
+
+![alt text](img/example1.png "Logo Title Text 1")
+
 
 ## Getting Started
 

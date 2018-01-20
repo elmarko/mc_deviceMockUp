@@ -7,7 +7,7 @@
 	display: flex; 
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: 0 auto 3.3rem;
+	margin: 0 auto 1.6rem;
 	flex-wrap: wrap;
 	clear: both;
 	float: none;
@@ -15,9 +15,24 @@
 	top: 1rem
 }
 
+.mc_mockup_cnt.image{
+	margin: 0 auto 3.3rem;
+}
+
+.mc_mockup_cnt.video.one{
+	border-top:0;
+	border-bottom:0;
+	top: 0; 
+	margin: 0 auto .6rem;
+}
+
 .mc_mockup_cnt.two{
 	justify-content: center;
 }
+
+.mc_mockup_cnt.video.one .mc_mockup{
+	width: 100%;
+	}
 
 .mc_mockup{
 	display: inline-block;
@@ -26,6 +41,9 @@
 	position: relative;
 	align-self: flex-end;
 	margin: 2.6rem 0;
+}
+.mc_mockup_cnt.video.one .mc_mockup{
+	margin: 0rem 0;
 }
 
 .mc_mockup_cnt.two .mc_mockup{
@@ -59,7 +77,7 @@
 	width: 30%;
 	background-size: 125%;
 }
-.mc_mockup.watch img{
+.mc_mockup.watch img, .mc_mockup.watch video{
 	width: 70%;
 	height: auto;
 	padding: 30% 0% 30% 24%;
@@ -81,13 +99,13 @@
 
 
 
-.mc_mockup.iphone-4s img{
+.mc_mockup.iphone-4s img, .mc_mockup.iphone-4s video{
 	width: 100%;
 	height: auto;
 	padding: 29.5% 6.9% 28% 7.8%;
 }
 
-.mc_mockup.iphone-se img{
+.mc_mockup.iphone-se img, .mc_mockup.iphone-se video{
 	width: 100%;
 	height: auto;
 	padding: 29.5% 6.9% 28% 7.8%;
@@ -98,7 +116,7 @@
 	width: 30%;
 }
 
-.mc_mockup.iphone-6 img{
+.mc_mockup.iphone-6 img, .mc_mockup.iphone-6 video{
 	width: 100%;
 	height: auto;
 	padding: 24.5% 6.5% 24% 6.5%;
@@ -109,7 +127,7 @@
 	width: 33%;
 }
 
-.mc_mockup.iphone-6-plus img{
+.mc_mockup.iphone-6-plus img, .mc_mockup.iphone-6-plus video{
 	width: 100%;
 	height: auto;
 	padding: 23.5% 6.9% 23% 6%;
@@ -124,9 +142,13 @@
 }
 
 @media screen and (min-width:768px){
-	.mc_mockup_cnt{
+	.mc_mockup_cnt.image{
 		width: calc(750px - 65px);
 		top: 1.8rem;
+		}
+	.mc_mockup_cnt.video{
+		width: 100%;
+		top: 0;
 		}
 	.mc_mockup_cnt.four .mc_mockup:nth-child(1), .mc_mockup_cnt.four .mc_mockup:nth-child(2){
 		margin: 2.6rem auto 1.3rem;
@@ -156,7 +178,9 @@
 }
 
 @media screen and (min-width:1200px){
-	.mc_mockup_cnt{
+	.mc_mockup_cnt.image{
 		width: 1140px;
 		}
+	.mc_mockup_cnt.video{width:100%}
+	.mc_mockup_cnt.video.one .mc_mockup{margin: 1.6rem}
 }

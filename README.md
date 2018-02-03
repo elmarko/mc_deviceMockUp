@@ -60,6 +60,11 @@ Sets the device mock up to use (model affects all images in the container)
 ```
 Sets the device mock up to use on a per image basis (models affects a single image for all specified in the container)
 
+## Updates
+
+* 0.1 working-ish
+* 0.2 bug fixes to original code, adds in class to html to detect if models are the same or distinct, allows videos to be used in the wrap, adds in a class to html based on number of items in the shortcode block, adds readme.md 
+* 0.3 to do: switch to owl carousel gallery for mobile devices for better experience. Add in models for iPhone X, iPad generic Android
 
 ## Contributing
 

@@ -10,7 +10,7 @@
    */
    /** 
 	0.1 working-ish
-	0.2 bug fixes to original code, adds in class to html to detect if models are the same or distinct, allows videos to be used in the wrap, adds in a class to html based on number of items in the shortcode block  
+	0.2 bug fixes to original code, adds in class to html to detect if models are the same or distinct, allows videos to be used in the wrap, adds in a class to html based on number of items in the shortcode block, adds readme.md 
 	0.3 to do: switch to owl carousel gallery for mobile devices for better experience. Add in models for iPhone X, iPad generic Android
 	**/
    
@@ -143,12 +143,10 @@ function prepareAnyVideo($matches, $modelsToUse){
 
 function returnHtmlClassForSingularOrMultipleModels($model = null, $models = null){
 	$stringToReturn = "single-model";
-	if (isset($models)){
-		$m = explode(",",$models);
-		foreach ($m as $mx){
-			$stringToUse = checkForVariancesIntThePassedModelString($mx);
-			$modelsToUse[] = $stringToUse;
-		}
+	if (!empty($models)){
+		$stringToReturn = "multiple-models";
+	}else{
+		
 	}
 	return $stringToReturn;
 }

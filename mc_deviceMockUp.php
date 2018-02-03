@@ -8,7 +8,13 @@
    Author URI: http://markcormack.co.uk
    License: GPL2
    */
+   /** 
+	0.1 working-ish
+	0.2 bug fixes to original code, adds in class to html to detect if models are the same or distinct, allows videos to be used in the wrap, adds in a class to html based on number of items in the shortcode block  
+	0.3 to do: switch to owl carousel gallery for mobile devices for better experience. Add in models for iPhone X, iPad generic Android
+	**/
    
+    
 /******************* SHORTCODE DISPLAY STUFF *********************/
 function mc_deviceMockUp_add_my_css_and_my_js_files(){
         wp_enqueue_style( 'mc_deviceMockUp styles', plugins_url('/css/mc_deviceMockUp-style.min.css', __FILE__), false, '1.0.0', 'all');
@@ -135,6 +141,18 @@ function prepareAnyVideo($matches, $modelsToUse){
 		return $stringToReturn;
 }
 
+function returnHtmlClassForSingularOrMultipleModels($model = null, $models = null){
+	$stringToReturn = "single-model";
+	if (isset($models)){
+		$m = explode(",",$models);
+		foreach ($m as $mx){
+			$stringToUse = checkForVariancesIntThePassedModelString($mx);
+			$modelsToUse[] = $stringToUse;
+		}
+	}
+	return $stringToReturn;
+}
+
 function mc_deviceMockUp_to_frontend_shortcode_func($atts = [], $content = null){ 
 	mc_deviceMockUp_add_my_css_and_my_js_files();
 	$specificStyles = $atts["styles"];
@@ -145,6 +163,7 @@ function mc_deviceMockUp_to_frontend_shortcode_func($atts = [], $content = null)
 	$enclosingElementToUse = returnEnclosingElement($caption);
 	$figCaptionToUse = returnFigCaption($caption);
 	$modelsToUse = returnModelsToUse($model, $models);
+	$singleOrMultipleDevices = returnHtmlClassForSingularOrMultipleModels($model, $models);
 	$typeClass = "";
 	//var_dump($modelsToUse);
 	ob_start();
@@ -158,7 +177,7 @@ function mc_deviceMockUp_to_frontend_shortcode_func($atts = [], $content = null)
 		}
 		$numberOfImages = count($matches[1]);
 		$imageCountString = returnNumberOfImagesAsAString($numberOfImages);
-		echo '<'.$enclosingElementToUse.' class="mc_mockup_cnt '.$typeClass.' '.$imageCountString.'" '.$specificStylesToUse.' >';
+		echo '<'.$enclosingElementToUse.' class="mc_mockup_cnt '.$typeClass.' '.$imageCountString.' '.$singleOrMultipleDevices.'" '.$specificStylesToUse.' >';
 		echo $stringToReturn;
 		echo $figCaptionToUse;
 		echo '</'.$enclosingElementToUse.'>';	

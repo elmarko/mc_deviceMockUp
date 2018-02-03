@@ -33,7 +33,10 @@
 .mc_mockup_cnt.video.one .mc_mockup{
 	width: 100%;
 	}
-
+.mc_mockup_cnt.video.one .mc_mockup{
+	width: 50%
+	margin: 0 auto;
+	}
 .mc_mockup{
 	display: inline-block;
 	box-sizing: border-box;
@@ -94,7 +97,7 @@
 }
 
 .mc_mockup_cnt.four .mc_mockup{
-	width: 47%;
+	width: 37%;
 }
 
 
@@ -163,9 +166,14 @@
 	.mc_mockup_cnt figcaption{
 		left: -15px;
 		}
+	.mc_mockup_cnt.video.one .mc_mockup{
+	width: 100%
+	margin: 0;
+	}
+		
 }
 @media screen and (min-width:992px){
-	.mc_mockup_cnt{
+	.mc_mockup_cnt.image{
 		width: 940px;
 		flex-wrap: no-wrap;
 		}
